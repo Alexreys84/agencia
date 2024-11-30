@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendas de Veículos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f8e81c, #0b8b2e);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0b8b2e;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    nav a:hover {
+      background-color: #f8e81c;
+      border-radius: 5px;
+      color: #0b8b2e;
+    }
+
+    .banner-rotativo {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      height: 250px;
+    }
+
+    .banner-rotativo img {
+      width: 100%;
+      object-fit: cover;
+      animation: slide 10s infinite;
+    }
+
+    @keyframes slide {
+      0%, 25% { transform: translateX(0); }
+      50%, 75% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .veiculos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+      border: 2px solid #0b8b2e;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      padding: 20px;
+      height: 350px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 2px solid #f8e81c;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    button {
+      background-color: #0b8b2e;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #f8e81c;
+      color: #0b8b2e;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    footer a {
+      color: #f8e81c;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #0b8b2e;
+    }
+
+    @media (max-width: 768px) {
+      .veiculos {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">🚗 Vendas de Veículos</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="estoque.html">Estoque</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="banner-rotativo">
+      <img src="banner1.jpg" alt="Banner 1">
+      <img src="banner2.jpg" alt="Banner 2">
+      <img src="banner3.jpg" alt="Banner 3">
+      <img src="banner4.jpg" alt="Banner 4">
+    </div>
+
+    <section class="veiculos">
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 1</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro2.jpg" alt="Carro 2">
+        <h3>Carro 2</h3>
+        <p>Descrição breve</p>
+        <p>R$ 60.000</p>
+        <button onclick="abrirDetalhes('carro2.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro3.jpg" alt="Carro 3">
+        <h3>Carro 3</h3>
+        <p>Descrição breve</p>
+        <p>R$ 70.000</p>
+        <button onclick="abrirDetalhes('carro3.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro4.jpg" alt="Carro 4">
+        <h3>Carro 4</h3>
+        <p>Descrição breve</p>
+        <p>R$ 80.000</p>
+        <button onclick="abrirDetalhes('carro4.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 5</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 6</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 7</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 8</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 9</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 10</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 11</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 12</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 13</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 14</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 15</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+      
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 16</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 17</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 18</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 19</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+
+      <div class="card">
+        <img src="carro1.jpg" alt="Carro 1">
+        <h3>Carro 20</h3>
+        <p>Descrição breve</p>
+        <p>R$ 50.000</p>
+        <button onclick="abrirDetalhes('carro1.html')">Ver mais detalhes</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="copyright">
+      <p>© 2024 Venda de veiculos. Todos os direitos reservados.</p>
+  </div>
+    <p>Desenvolvido por <a href="https://wa.me/11942062810" target="_blank">Alex Reis</a></p>
+  </footer>
+
+  <script>
+    function abrirDetalhes(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
