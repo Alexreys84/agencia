@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localização - Vendas de Veículos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #f8e81c, #0b8b2e);
+      color: #333;
+    }
+
+    header {
+      background-color: #0b8b2e;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    nav a:hover {
+      background-color: #f8e81c;
+      color: #0b8b2e;
+      border-radius: 5px;
+    }
+
+    main.BannerPaginas {
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+    }
+
+    .teste-contato {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .container4,
+    .container8 {
+      width: 45%;
+      padding: 20px;
+      background-color: #e8e8e8;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"],
+    form input[type="reset"] {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #0b8b2e;
+      color: white;
+    }
+
+    form input[type="submit"]:hover,
+    form input[type="reset"]:hover {
+      background-color: #f8e81c;
+      color: #0b8b2e;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    footer a {
+      color: #f8e81c;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #0b8b2e;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .teste-contato {
+        flex-direction: column;
+      }
+
+      .container4,
+      .container8 {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">🚗 Vendas de Veículos</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="estoque.html">Estoque</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="BannerPaginas Flex">
+    <div class="Container">
+      <h1>Localização</h1>
+    </div>
+  </main>
+
+  <div class="teste-contato">
+    <div class="container4">
+      <h1>Contato</h1>
+      <form action="mailto:seuemail@email.com?subject=Contato do site">
+        <input type="text" name="nome" id="nome" placeholder="Nome" required>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
+        <textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Mensagem"></textarea>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reset">
+      </form>
+    </div>
+    <div class="container8">
+      <h3>Localização</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.722039558451!2d-46.43940039999999!3d-23.542497800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce669dffa40675%3A0x719d7efb5993268c!2sR.%20Virg%C3%ADnia%20Ferni%2C%20901h%20-%20Itaquera%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2008253-000!5e0!3m2!1spt-BR!2sbr!4v1712603768215!5m2!1spt-BR!2sbr" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapa"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <div id="copyright">
+      <p>© 2024 Venda de veiculos. Todos os direitos reservados.</p>
+  </div>
+    <p>Desenvovido por <a href="https://wa.me/11942062810" target="_blank">Alex Reis</a></p>
+  </footer>
+</body>
+
+</html>
