@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Carro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8e81c, #0b8b2e);
+      color: #333;
+    }
+
+    header {
+      background-color: #0b8b2e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .section-principal {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .card-grande {
+      width: 60%;
+      max-width: 600px;
+      height: 350px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-grande img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: none;
+    }
+
+    .card-grande:hover .seta {
+      display: block;
+    }
+
+    .seta-esquerda {
+      left: 10px;
+    }
+
+    .seta-direita {
+      right: 10px;
+    }
+
+    .detalhes {
+      width: 35%;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .detalhes a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      background-color: #0b8b2e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .detalhes a:hover {
+      background-color: #f8e81c;
+      color: #0b8b2e;
+    }
+
+    .cards-pequenos-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
+      justify-content: flex-start;
+    }
+
+    .cards-pequenos img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .cards-pequenos img:hover {
+      transform: scale(1.1);
+      border-color: #0b8b2e;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    footer a {
+      color: #f8e81c;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #0b8b2e;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="estoque.html">Home</a></li>
+      </ul>
+    </nav>
+    <h1>Carro - Detalhes</h1>
+  </header>
+
+  <main>
+    <div class="section-principal">
+      <div class="card-grande">
+        <img id="imagem-grande" src="carro4.jpg" alt="Imagem do carro">
+        <button class="seta seta-esquerda" onclick="navegar(-1)">&#8249;</button>
+        <button class="seta seta-direita" onclick="navegar(1)">&#8250;</button>
+      </div>
+
+      <div class="detalhes">
+        <h2>Detalhes do Carro</h2>
+        <p><strong>Modelo:</strong> Carro 4</p>
+        <p><strong>Ano de Fabricação:</strong> 2020/2021</p>
+        <p><strong>Descrição:</strong> Veículo completo, motor 2.0, automático, bancos de couro.</p>
+        <p><strong>Preço:</strong> R$ 80.000</p>
+        <a href="https://wa.me/11942062810" target="_blank">Fale pelo WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="cards-pequenos-container">
+      <img src="carro1.jpg" alt="Carro 1" onclick="atualizarImagem('carro1.jpg')">
+      <img src="carro2.jpg" alt="Carro 2" onclick="atualizarImagem('carro2.jpg')">
+      <img src="carro3.jpg" alt="Carro 3" onclick="atualizarImagem('carro3.jpg')">
+      <img src="carro4.jpg" alt="Carro 4" onclick="atualizarImagem('carro4.jpg')">
+      <img src="carro5.jpg" alt="Carro 5" onclick="atualizarImagem('carro5.jpg')">
+      <img src="carro6.jpg" alt="Carro 6" onclick="atualizarImagem('carro6.jpg')">
+      <img src="carro7.jpg" alt="Carro 7" onclick="atualizarImagem('carro7.jpg')">
+      <img src="carro8.jpg" alt="Carro 8" onclick="atualizarImagem('carro8.jpg')">
+    </div>
+  </main>
+  <footer>
+    <div id="copyright">
+      <p>© 2024 Venda de veiculos. Todos os direitos reservados.</p>
+  </div>
+    <p>Desenvolvido por <a href="https://wa.me/11942062810" target="_blank">Alex Reis</a></p>
+  </footer>
+
+  <script>
+    let indiceAtual = 3;
+    const imagens = [
+      "carro1.jpg",
+      "carro2.jpg",
+      "carro3.jpg",
+      "carro4.jpg"
+    ];
+
+    function atualizarImagem(imagem) {
+      document.getElementById("imagem-grande").src = imagem;
+      indiceAtual = imagens.indexOf(imagem);
+    }
+
+    function navegar(direcao) {
+      indiceAtual += direcao;
+      if (indiceAtual < 0) indiceAtual = imagens.length - 1;
+      if (indiceAtual >= imagens.length) indiceAtual = 0;
+      document.getElementById("imagem-grande").src = imagens[indiceAtual];
+    }
+  </script>
+</body>
+
+</html>
